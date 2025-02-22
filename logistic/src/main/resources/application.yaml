@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: logistic
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: product-group
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/product_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: MYSQL
+    hikari:
+      maximum-pool-size: 10
